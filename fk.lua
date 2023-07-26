@@ -2,9 +2,6 @@ local sampev = require 'samp.events'
 require 'lib.moonloader'
 local memory = require 'memory'
 
-local encoding = require 'encoding'
-encoding.default = 'CP1251'
-local function u8d(s) return encoding.UTF8:decode(s) end
 local inicfg = require 'inicfg'
 local dlStatus = require('moonloader').download_status
 local script_vers = 2
