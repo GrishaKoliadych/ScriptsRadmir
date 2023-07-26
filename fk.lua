@@ -9,7 +9,7 @@ local script_text = "1.00"
 local update_url = "https://raw.githubusercontent.com/GrishaKoliadych/ScriptsRadmir/AntiAfk/update.ini"
 local update_path = getWorkingDirectory() .. "/version/FK_update.ini"
 local update_state = false
-local script_url = "fk.lua"
+local script_url = "https://raw.githubusercontent.com/GrishaKoliadych/ScriptsRadmir/AntiAfk/fk.lua"
 local script_parh = thisScript().path
 
 isFK = false
@@ -19,7 +19,7 @@ function main()
 		if status == dlStatus.STATUS_ENDDOWNLOADDATA then
 			updateini = inicfg.load(nil, update_path)
 			if tonumber(updateini.info.vers) > script_vers then
-				sampAddChatMessage("Есть обновление", -1)
+				sampAddChatMessage("[AntiAFK] РќР°Р№РґРµРЅРѕ РѕР±РЅРѕРІР»РµРЅРёРµ, РЅР°С‡РёРЅР°РµС‚СЃСЏ РїСЂРѕС†РµСЃСЃ СЃРєР°С‡РёРІР°РЅРёСЏ", -1)
 				update_state = true
 			end
 			os.remove(update_path)
@@ -36,7 +36,7 @@ function main()
 		if update_state then
 			downloadUrlToFile(script_url, script_parh, function(id, status)
 				if status == dlStatus.STATUS_ENDDOWNLOADDATA then
-					sampAddChatMessage("Скрипт успешно обновлён", -1)
+					sampAddChatMessage("[AntiAFK] РћР±РЅРѕРІР»РµРЅРёРµ СѓСЃРїРµС€РЅРѕ Р·Р°РіСЂСѓР¶РµРЅРѕ", -1)
 					thisScript():reload()
 				end
 			end)
@@ -114,6 +114,6 @@ function start(typeFK)
 		end
 	end
 	if typeFK ~= "0" and typeFK ~= "1" then
-		sampAddChatMessage("Используйте /fk [0-1]", -1)
+		sampAddChatMessage("РСЃРїРѕР»СЊР·СѓР№С‚Рµ /fk [0-1]", -1)
 	end
 end
