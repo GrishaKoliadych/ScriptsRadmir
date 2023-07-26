@@ -7,8 +7,7 @@ encoding.default = 'CP1251'
 local function u8d(s) return encoding.UTF8:decode(s) end
 local inicfg = require 'inicfg'
 local dlStatus = require('moonloader').download_status
-local script_vers = 1
-local script_text = "1.00"
+local script_vers = 2
 local update_url = "https://raw.githubusercontent.com/GrishaKoliadych/ScriptsRadmir/AntiAfk/update.ini"
 local update_path = getWorkingDirectory() .. "/version/FK_update.ini"
 local update_state = false
